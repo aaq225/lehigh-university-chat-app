@@ -2,7 +2,7 @@
 
 Welcome to the **Lehigh University Chat App**, a real-time messaging platform designed for users to connect and communicate effortlessly. The application provides a seamless chat experience with features like adding friends, blocking users, sharing images, and using emojis.
 
-[Live Demo - Check it out here!](https://luchatapp.netlify.app//)
+[Live Demo - Check it out here!](https://luchatapp.netlify.app)
 
 > **Note:** This app is in active development—stay tuned for new features coming soon!
 
