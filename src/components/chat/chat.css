@@ -1,6 +1,4 @@
 .chat {
-  /* overflow-x: hidden; */
-
   flex: 2;
   border-left: 1px solid #dddddd35;
   border-right: 1px solid #dddddd35;
@@ -21,8 +19,8 @@
       gap: 20px;
 
       img {
-        height: 60px;
         width: 60px;
+        height: 60px;
         border-radius: 50%;
         object-fit: cover;
       }
@@ -33,12 +31,12 @@
         gap: 5px;
 
         span {
-          font-style: 8px;
+          font-size: 18px;
           font-weight: bold;
         }
 
         p {
-          font-style: 14px;
+          font-size: 14px;
           font-weight: 300;
           color: #a5a5a5;
         }
@@ -50,8 +48,8 @@
       gap: 20px;
 
       img {
-        height: 20px;
         width: 20px;
+        height: 20px;
       }
     }
   }
@@ -85,7 +83,6 @@
         border-radius: 50%;
         object-fit: cover;
       }
-
       .texts {
         flex: 1;
         display: flex;
@@ -125,9 +122,10 @@
       display: flex;
       gap: 20px;
     }
+
     img {
-      height: 20px;
       width: 20px;
+      height: 20px;
       cursor: pointer;
     }
 
@@ -139,7 +137,11 @@
       color: white;
       padding: 20px;
       border-radius: 10px;
-      font-style: 16px;
+      font-size: 16px;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
 
     .emoji {
@@ -148,17 +150,22 @@
       .picker {
         position: absolute;
         bottom: 50px;
-        left: 0px;
+        left: 0;
       }
     }
 
     .sendButton {
-      border: none;
       background-color: #5183fe;
       color: white;
       padding: 10px 20px;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
+
+      &:disabled {
+        background-color: #5182feb4;
+        cursor: not-allowed;
+      }
     }
   }
 }
