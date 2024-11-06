@@ -54,16 +54,60 @@
         border-radius: 5px;
         font-weight: 500;
 
-       &:disabled {
-        cursor: not-allowed;
-        background-color: #1f8ff19c;
-       }
+        &:disabled {
+          cursor: not-allowed;
+          background-color: #1f8ff19c;
+        }
       }
     }
   }
+
   .separator {
     height: 80%;
     width: 2px;
     background-color: #dddddd35;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .item form {
+    width: 90%;
+  }
+
+  .separator {
+    height: 2px;
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .item form {
+    gap: 15px;
+    width: 100%;
+  }
+
+  .item form input {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .item form button {
+    padding: 15px;
+  }
+
+  .separator {
+    height: 2px;
+    width: 60%;
   }
 }

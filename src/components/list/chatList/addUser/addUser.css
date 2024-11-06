@@ -43,6 +43,7 @@ form {
     display: flex;
     align-items: center;
     gap: 20%;
+    
     img {
       width: 50px;
       height: 50px;
@@ -58,5 +59,89 @@ form {
     color: white;
     border: none;
     cursor: pointer;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .addUser {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+      padding: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 16px;
+    }
+  }
+
+  .user {
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 15px;
+
+    .detail {
+      gap: 10px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .addUser {
+    width: 100%;
+    padding: 15px;
+  }
+
+  form {
+    gap: 10px;
+
+    input {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+
+  .user {
+    margin-top: 20px;
+    gap: 10px;
+
+    .detail {
+      gap: 8px;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    button {
+      padding: 8px;
+      font-size: 13px;
+    }
   }
 }

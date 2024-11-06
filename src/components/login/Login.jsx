@@ -36,8 +36,10 @@ const Login = () => {
     // VALIDATE INPUTS
     if (!username || !email || !password)
       return toast.warn("Please enter inputs!");
-    if (!avatar.file) return toast.warn("Please upload an avatar!");
-
+    if (!avatar.file) {
+      setLoading(false);
+      return toast.warn("Please upload an avatar!");
+    }
     // VALIDATE UNIQUE USERNAME
     const usersRef = collection(db, "users");
     const q = query(usersRef, where("username", "==", username));
@@ -96,17 +98,17 @@ const Login = () => {
   return (
     <div className="login">
       <div className="item">
-        <h2>Welcome back,</h2>
-        <form onSubmit={handleLogin}>
-          <input type="text" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
+        <h2>Welcome Back</h2>
+        <form autoComplete="off" onSubmit={handleLogin}>
+          <input type="text" placeholder="Email" name="email" autoComplete="off" />
+          <input type="password" placeholder="Password" name="password" autoComplete="off" />
           <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
         </form>
       </div>
       <div className="separator"></div>
       <div className="item">
         <h2>Create an Account</h2>
-        <form onSubmit={handleRegister}>
+        <form autoComplete="off" onSubmit={handleRegister}>
           <label htmlFor="file">
             <img src={avatar.url || "./avatar.png"} alt="" />
             Upload an image
@@ -114,12 +116,13 @@ const Login = () => {
           <input
             type="file"
             id="file"
+            autoComplete="off"
             style={{ display: "none" }}
             onChange={handleAvatar}
           />
-          <input type="text" placeholder="Username" name="username" />
-          <input type="text" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
+          <input type="text" placeholder="Username" name="username" autoComplete="off" />
+          <input type="text" placeholder="Email" name="email"/>
+          <input type="password" placeholder="Password" name="password" autoComplete="off" />
           <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
         </form>
       </div>

@@ -4,6 +4,7 @@
   flex-direction: column;
 }
 
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 5px;
   background: transparent;
@@ -12,4 +13,27 @@
 ::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .list {
+    flex: none;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    padding: 8px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333; /* Slightly lighter for better visibility on small screens */
+  }
 }

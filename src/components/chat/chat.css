@@ -169,3 +169,94 @@
     }
   }
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat .top, .chat .center, .chat .bottom {
+    padding: 15px;
+  }
+
+  .chat .top .user img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chat .top .user .texts span {
+    font-size: 16px;
+  }
+
+  .chat .top .user .texts p {
+    font-size: 12px;
+  }
+
+  .chat .center .message {
+    gap: 15px;
+  }
+
+  .chat .center .message img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .chat .center .message .texts img {
+    height: 200px;
+  }
+
+  .chat .center .message .texts p {
+    padding: 15px;
+  }
+
+  .chat .bottom input {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .chat .bottom .sendButton {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat .top, .chat .center, .chat .bottom {
+    padding: 10px;
+  }
+
+  .chat .top .user img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .chat .top .user .texts span {
+    font-size: 14px;
+  }
+
+  .chat .top .user .texts p {
+    font-size: 10px;
+  }
+
+  .chat .center .message {
+    gap: 10px;
+  }
+
+  .chat .center .message img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .chat .center .message .texts img {
+    height: 150px;
+  }
+
+  .chat .center .message .texts p {
+    padding: 10px;
+  }
+
+  .chat .bottom input {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .chat .bottom .sendButton {
+    padding: 6px 10px;
+  }
+}

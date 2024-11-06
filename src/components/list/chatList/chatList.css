@@ -1,6 +1,7 @@
 .chatList {
   flex: 1;
   overflow: scroll;
+
   .search {
     display: flex;
     align-items: center;
@@ -45,7 +46,6 @@
     align-items: center;
     padding: 20px;
     gap: 20px;
-    padding: 20px;
     cursor: pointer;
     border-bottom: 1px solid #dddddd35;
 
@@ -66,9 +66,75 @@
       }
 
       p {
-        font-style: 14px;
+        font-size: 14px;
         font-weight: 300;
       }
     }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatList .search {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .chatList .search .searchBar {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .chatList .item {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .chatList .item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .chatList .item .texts span {
+    font-size: 14px;
+  }
+
+  .chatList .item .texts p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatList .search {
+    padding: 10px;
+  }
+
+  .chatList .search .searchBar {
+    padding: 6px;
+  }
+
+  .chatList .search .add {
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+  }
+
+  .chatList .item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .chatList .item img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .chatList .item .texts span {
+    font-size: 13px;
+  }
+
+  .chatList .item .texts p {
+    font-size: 11px;
   }
 }

@@ -7,16 +7,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     border-bottom: 1px solid #dddddd35;
 
     img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%; 
       object-fit: cover;
     }
   }
+  
   .info {
     padding: 20px;
     display: flex;
@@ -49,6 +50,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
+
           .photoDetail {
             display: flex;
             align-items: center;
@@ -60,12 +62,14 @@
               border-radius: 5px;
               object-fit: cover;
             }
+
             span {
               font-size: 14px;
               color: lightgray;
               font-weight: 300;
             }
           }
+
           .icon {
             width: 30px;
             height: 30px;
@@ -77,6 +81,7 @@
         }
       }
     }
+    
     button {
       padding: 15px;
       background-color: rgba(230, 74, 105, 0.533);
@@ -95,5 +100,72 @@
         background-color: #1a73e8;
       }
     }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detail .user img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .detail .info {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .detail .info .option .title img,
+  .detail .info .option .photos .photoItem .icon {
+    width: 25px;
+    height: 25px;
+    padding: 8px;
+  }
+
+  .detail .info .option .photos .photoItem .photoDetail img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .detail .info button {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail .user {
+    padding: 20px 10px;
+  }
+
+  .detail .user img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .detail .info {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .detail .info .option .title img,
+  .detail .info .option .photos .photoItem .icon {
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+  }
+
+  .detail .info .option .photos .photoItem .photoDetail img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .detail .info button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .detail .info button.logout {
+    padding: 8px;
+    font-size: 13px;
   }
 }

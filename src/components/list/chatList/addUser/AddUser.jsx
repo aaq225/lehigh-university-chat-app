@@ -1,4 +1,5 @@
 import "./addUser.css";
+import { toast } from "react-toastify";
 import { db } from "../../../../lib/firebase";
 import {
   arrayUnion,
@@ -40,11 +41,25 @@ const AddUser = () => {
     }
   };
 
+
   const handleAdd = async () => {
     const chatRef = collection(db, "chats");
-    const userChatsRef = collection(db, "userchats");
+    const userChatsRef = doc(db, "userchats", currentUser.id);
 
     try {
+      // Get the current user's chat list
+      const userChatsDoc = await getDoc(userChatsRef);
+
+      // Check if the user is already in the chat list
+      const existingChats = userChatsDoc.exists() ? userChatsDoc.data().chats : [];
+      const alreadyAdded = existingChats.some(chat => chat.receiverId === user.id);
+
+      if (alreadyAdded) {
+        toast.warn("User is already in your chat list.");
+        return;
+      }
+
+      // Create a new chat document
       const newChatRef = doc(chatRef);
 
       await setDoc(newChatRef, {
@@ -52,7 +67,17 @@ const AddUser = () => {
         messages: [],
       });
 
-      await updateDoc(doc(userChatsRef, user.id), {
+      // Update the chat list for both users
+      await updateDoc(userChatsRef, {
+        chats: arrayUnion({
+          chatId: newChatRef.id,
+          lastMessage: "",
+          receiverId: user.id,
+          updatedAt: Date.now(),
+        }),
+      });
+
+      await updateDoc(doc(db, "userchats", user.id), {
         chats: arrayUnion({
           chatId: newChatRef.id,
           lastMessage: "",
@@ -61,18 +86,13 @@ const AddUser = () => {
         }),
       });
 
-      await updateDoc(doc(userChatsRef, currentUser.id), {
-        chats: arrayUnion({
-          chatId: newChatRef.id,
-          lastMessage: "",
-          receiverId: user.id,
-          updatedAt: Date.now(),
-        }),
-      });
+      toast.success("User added successfully!");
     } catch (err) {
       console.log(err);
+      toast.error("An error occurred while adding the user.");
     }
   };
+
 
   return (
     <div className="addUser">
