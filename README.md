@@ -61,7 +61,7 @@ If you need to block a user, they will no longer be able to see your profile or 
 - **Zustand**: Lightweight state management solution for handling user data and chat states.
 
 ## Future Enhancements
-We’re working to bring more exciting features to the app, including:
+I'm working to bring more exciting features to the app, including:
 - **Message Reactions**: React to messages with emojis or icons.
 - **Typing Indicators**: See when the other user is typing.
 - **Read Receipts**: Know when your messages have been read.
